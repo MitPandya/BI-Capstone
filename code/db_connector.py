@@ -4,16 +4,16 @@ client = MongoClient("localhost", 27017)
 
 db = client.yelp_db
 #collection = db.yelp_academic_dataset_review
-collection = db.yelp_academic_dataset_business
-collection2 = db.yelp_academic_dataset_review
+collection_business = db.business
+collection_review = db.review
 
-data = collection.find({'$and':[{'categories':'Food'}]})
+data = collection_business.find({'$and':[{'categories':'Food'}]})
 
 business_id = []
 for x in data:
 	business_id.append(x['business_id'])
 
-review_data = list(collection2.find())
+review_data = list(collection_review.find())
 
 reviews = filter(lambda x: x in business_id, review_data)
 
