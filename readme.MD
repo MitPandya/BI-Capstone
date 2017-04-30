@@ -1,4 +1,4 @@
-# Yelp Dataset Analysis
+# Yelp Data Analysis
 
 ## code instructions
 Please install requirement packages from code/requirements.txt file.
